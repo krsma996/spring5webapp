@@ -1,0 +1,27 @@
+Gateway
+
+- Endpoint that is exposed to other services
+- Can be internet for public API's
+- More likely to be Internal
+- Abstract implementation of services 
+- Clients calls URL, is unaware of routing taking place to running instance 
+- Acts as roughly a proxy for network traffic 
+- Can also be as load balancer 
+
+
+Gateway u Mikroservisima
+Gateway je komponenta koja služi kao ulazna tačka za sve zahteve prema mikroservisima. Njegove ključne funkcije uključuju:
+
+Ekspozicija Endpoint-a: Gateway izlaže endpoint-e koji su dostupni drugim servisima, bilo interno ili eksterno (preko interneta za javne API-je).
+Apstrakcija Implementacije Servisa: Klijenti koji pozivaju endpoint-e nisu svesni stvarnih lokacija ili broja instanci servisa. 
+Oni komuniciraju samo sa gateway-om.
+Proksi za Mrežni Saobraćaj: Gateway funkcioniše kao proxy, usmeravajući saobraćaj do odgovarajuće instance servisa.
+Load Balancing: Gateway može balansirati opterećenje između više instanci istog servisa.
+Kombinacija sa Service Discovery (Eureka)
+Service Discovery aplikacija kao što je Eureka omogućava registrovanje i otkrivanje mikroservisa. Kada se mikroservisi registruju kod Eureke, gateway može da koristi te informacije za rutiranje zahteva.
+
+Kako to funkcioniše:
+Registracija Mikroservisa: Svi mikroservisi se registruju kod Eureke sa svojim informacijama (npr. URL, port).
+Klijenti (Korisnici): Klijenti (bilo da su to web aplikacije, mobilne aplikacije ili drugi servisi) šalju zahteve ka gateway-u.
+Gateway: Kada gateway primi zahtev, on koristi informacije iz Eureke da bi pronašao odgovarajući mikroservis koji treba da obradi taj zahtev.
+Ruting i Load Balancing: Gateway rutira zahtev ka odgovarajućoj instanci mikroservisa i balansira opterećenje ako ima više instanci.
