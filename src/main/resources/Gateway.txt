@@ -18,7 +18,8 @@ Oni komuniciraju samo sa gateway-om.
 Proksi za Mrežni Saobraćaj: Gateway funkcioniše kao proxy, usmeravajući saobraćaj do odgovarajuće instance servisa.
 Load Balancing: Gateway može balansirati opterećenje između više instanci istog servisa.
 Kombinacija sa Service Discovery (Eureka)
-Service Discovery aplikacija kao što je Eureka omogućava registrovanje i otkrivanje mikroservisa. Kada se mikroservisi registruju kod Eureke, gateway može da koristi te informacije za rutiranje zahteva.
+Service Discovery aplikacija kao što je Eureka omogućava registrovanje i otkrivanje mikroservisa. 
+Kada se mikroservisi registruju kod Eureke, gateway može da koristi te informacije za rutiranje zahteva.
 
 Kako to funkcioniše:
 Registracija Mikroservisa: Svi mikroservisi se registruju kod Eureke sa svojim informacijama (npr. URL, port).
